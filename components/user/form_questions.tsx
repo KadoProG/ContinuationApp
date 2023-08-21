@@ -9,6 +9,7 @@ import {
 } from "./htmlOriginElements";
 import FormQuestionChild from "./form_question_child";
 import { userChildTask, userTask } from "./types";
+import { addSupabaseUserTask } from "../../lib/supabaseFunctions";
 
 const DivForm = styled.div`
   padding: 10px;
@@ -66,6 +67,10 @@ const FormQuestions = () => {
     setUserTask({ ...userTask, tasks: newUserChildTask });
   };
 
+  const handleSubmit = async () => {
+    await addSupabaseUserTask(userTask);
+  };
+
   return (
     <DivForm>
       <div>
@@ -97,7 +102,7 @@ const FormQuestions = () => {
         <ElementIconPlus height={28} />
         <span>小タスクを追加</span>
       </ButtonOrigin>
-      <button>送信する</button>
+      <ButtonOrigin onClick={handleSubmit}>送信する</ButtonOrigin>
     </DivForm>
   );
 };
