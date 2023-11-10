@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "朝活",
+    "tasks": {
+      "type": "or",
+      "or": { "limit": 1, "tasks": ["始発電車ルーティン", "自宅朝活7カフェ"] }
+    }
+  },
+  {
+    "id": 2,
+    "name": "筋トレ",
+    "tasks": {
+      "type": "and",
+      "and": [
+        { "limit": 3, "name": "腹筋" },
+        { "limit": 3, "name": "腕立て" },
+        { "or": { "limit": 1, "tasks": ["HIIT", "サイクリング"] } }
+      ]
+    }
+  }
+]
